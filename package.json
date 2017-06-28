@@ -1,0 +1,32 @@
+{
+  "name": "new_to-do-list",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vijeegovindan/Form_Parser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vijeegovindan/Form_Parser/issues"
+  },
+  "homepage": "https://github.com/vijeegovindan/Form_Parser#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-validator": "^3.2.0",
+    "jsonfile": "^3.0.0",
+    "morgan": "^1.8.2",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.5",
+    "pg": "^6.4.0",
+    "sequelize": "^4.2.0",
+    "sequelize-cli": "^2.7.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
