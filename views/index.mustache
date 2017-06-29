@@ -3,46 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Express Forms</title>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
     <div class="container">
 
+        <div class="">
+          {{#failure}} <p>{{.}}</p> {{/failure}}
+          {{#success}} <p>{{.}}</p> {{/success}}
+        </div>
         <div class="cls_input">
-          <form action="/" method="post">
+          <form action="/index" method="post">
           <input type="text" name="todo" value="" placeholder="Add a todo">
           <button type="submit">Add todo</button>
-          <input type="hidden" name="action" value="todo">
           </form>
         </div>
 
-
-        <div class="cls_list">
-          <ul>
-            <li>
-              {{#list}}
-              <form action="/" method="post">
-                <button type="submit" name="btnComplete">Mark as complete</button>
-                <span id="{{id}}">{{item}}</span>
-                <input type = "hidden" name="id_btn" value={{id}}>
-                <input type="hidden" name="action" value="complete">
-            </form>
-            {{/list}}
-            </li>
-        </div>
-
-
-        <div class="cls_complete">
+        <div class="container">
             <p><b>Completed Tasks</b></p><hr>
             <ul>
-              {{#list}}{{#marked}} <li>{{item}}</li> {{/marked}}{{/list}}
+              <li>
+              {{#list}}{{#completed}}
+                  <form action="/index/{{id}}/delete" method="post">
+                    {{task}}<button type="submit">DELETE</button>
+                  </form>
+              {{/completed}}{{/list}}
+              </li>
             </ul>
             <p><b>Incomplete Tasks</b></p><hr>
             <ul>
-              {{#list}}{{^marked}} <li>{{item}}</li> {{/marked}}{{/list}}
+              <li>
+              {{#list}}{{^completed}}
+                <form action="/index/{{id}}/update" method="post">
+                  {{task}}<button type="submit" name="btnComplete">Mark as complete</button>
+                </form>
+               {{/completed}}{{/list}}
+              </li>
             </ul>
         </div>
-
     </div>
   </body>
 </html>

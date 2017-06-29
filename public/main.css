@@ -26,15 +26,14 @@ label {
 }
 
 .container {
-  width: 50%;
+  width: 70%;
   border: 2px dotted black;
-  padding: 4vw;
-
+  padding: 1vw;
 }
 
 ul {
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   min-width: 50vw;
   padding: 1vw;
   list-style: none;
